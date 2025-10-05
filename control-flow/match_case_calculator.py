@@ -1,19 +1,26 @@
 num1 = int(input("Enter first number, "))
 num2 = int(input("Enter second number, "))
-
 operation = input("Choose the operation, +, -,*, /,  ")
 
-if operation == "+":
-    print(num1 + num2)
+match operation:
+    case "+":
+        result = num1 + num2
+        print("The result  is", result)
 
-elif operation == "-":
-    print(num1 - num2)
+    case "-":
+        result = num1 - num2
+        print("The result  is", result)
 
-elif operation == "*":
-    print(num1 - num2)
+    case "*":
+        result = num1 * num2
+        print("The result  is", result)
 
-elif operation == "/":
-    print(num1 / num2)
+    case "/":
+    if num2 == 0:
+        print("Cannot divide by zero.")
+    else:
+        result = num1 / num2
+        print("The result is", result)
 
-else:
-    print("invalid operation choice.")
+case _:
+    print("Invalid operation choice.")
